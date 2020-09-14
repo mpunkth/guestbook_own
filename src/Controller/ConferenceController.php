@@ -20,12 +20,13 @@ class ConferenceController extends AbstractController
        }
 
        return new Response(<<<EOF
-    <html>
-        <body>
-            $greet
-            <img src="/images/under-construction.gif" />
-        </body>
-    </html>
-       )
+<html>
+    <body>
+        $greet
+        <img src="/images/under-construction.gif" />
+    </body>
+</html>
+EOF
+        );
     }
 }
