@@ -125,8 +125,8 @@ class Comment
         return $this;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->conference;
+        return (string) $this->getEmail();
     }
 }
