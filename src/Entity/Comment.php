@@ -125,8 +125,8 @@ class Comment
         return $this;
     }
 
-    public function __toString(): string
+    public function __toString()
     {
-        return (string) $this->getEmail();
+        return $this->getEmail() ." ". strip_tags($this->getText()) ." ". $this->getPhotoFilename() . "\r\n" ;
     }
 }
