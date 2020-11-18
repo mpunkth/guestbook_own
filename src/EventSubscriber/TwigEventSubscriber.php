@@ -26,7 +26,7 @@ class TwigEventSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            'kerner.controller' => 'onKernerController',
+            ControllerEvent::class => 'onControllerEvent',
         ];
     }
 }
