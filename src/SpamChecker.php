@@ -11,7 +11,7 @@ class SpamChecker
     private $client;
     private $endpoint;
 
-    public function __construct( HttpClientInterface $client, string $akismetKey)
+    public function __construct(HttpClientInterface $client, string $akismetKey)
     {
         $this->client = $client;
         $this->endpoint = sprintf('https://%s.rest.akismet.com/1.1/comment-check', $akismetKey);
@@ -38,7 +38,7 @@ class SpamChecker
             ]),
         ]);
 
-        $headers =$response->getHeaders();
+        $headers = $response->getHeaders();
         if ('discard' === ($headers['x-akismet-pro-tip'][0] ?? '')) {
             return 2;
         }
@@ -50,8 +50,4 @@ class SpamChecker
 
         return 'true' === $content ? 1 : 0;
     }
-    
-
 }
-
-
