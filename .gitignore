@@ -11,3 +11,5 @@
 /vendor/
 ###< symfony/framework-bundle ###
 php_errors.log
+config/secrets/dev/dev.decrypt.private.php
+config/secrets/dev/dev.encrypt.public.php
