@@ -37,6 +37,7 @@ class SpamChecker
                 'is_test' => true,
             ]),
         ]);
+        dump($response);
 
         $headers = $response->getHeaders();
         if ('discard' === ($headers['x-akismet-pro-tip'][0] ?? '')) {
