@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Entity\Comment;
+use Symfony\Component\VarDumper\VarDumper;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class SpamChecker
@@ -37,8 +38,8 @@ class SpamChecker
                 'is_test' => true,
             ]),
         ]);
-        dump($response);
 
+        
         $headers = $response->getHeaders();
         if ('discard' === ($headers['x-akismet-pro-tip'][0] ?? '')) {
             return 2;
